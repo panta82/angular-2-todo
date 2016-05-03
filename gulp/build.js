@@ -11,12 +11,12 @@ var join = path.join;
  * clean task removes all the content from the distribution folder
  */
 gulp.task('clean', function () {
-  del(join(__dirname, conf.paths.dist));
+	del(join(__dirname, conf.paths.dist));
 });
 
 /*
  * build task runs all required tasks to launch the app
  */
 gulp.task('build', function (done) {
-  runSequence('assets', 'scripts', 'styles', 'inject', done);
+	runSequence('assets', 'scripts', 'styles', 'inject', done);
 });

@@ -13,22 +13,22 @@ var join = path.join;
  * sass task compiles sass files to css
  */
 gulp.task('sass', function () {
-  return gulp.src(join(__dirname, conf.paths.src, '**/*.{sass,scss}'))
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(join(__dirname, conf.paths.dist)));
+	return gulp.src(join(__dirname, conf.paths.src, '**/*.{sass,scss}'))
+		.pipe(sourcemaps.init())
+		.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest(join(__dirname, conf.paths.dist)));
 });
 
 /*
  * Import fonts from bower_components
  */
 gulp.task('fonts', function () {
-  return gulp.src(join(__dirname, conf.paths.bower, '/**/*.{eot,svg,ttf,woff,woff2}'))
-    .pipe(flatten())
-    .pipe(gulp.dest(join(__dirname, conf.paths.dist, 'fonts')));
+	return gulp.src(join(__dirname, conf.paths.bower, '/**/*.{eot,svg,ttf,woff,woff2}'))
+		.pipe(flatten())
+		.pipe(gulp.dest(join(__dirname, conf.paths.dist, 'fonts')));
 });
 
 gulp.task('styles', function (done) {
-  runSequence('sass', 'fonts', done);
+	runSequence('sass', 'fonts', done);
 });

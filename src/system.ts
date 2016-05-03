@@ -1,3 +1,4 @@
+//noinspection TypeScriptUnresolvedVariable
 System.config({
   packages: {
     app: {
@@ -7,5 +8,6 @@ System.config({
   }
 });
 
+//noinspection TypeScriptUnresolvedVariable
 System.import('app/main')
 .then(null, console.error.bind(console));

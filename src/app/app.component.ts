@@ -1,15 +1,15 @@
 import {Component, OnInit} from 'angular2/core';
 
 @Component({
-    selector: 'app',
-    templateUrl: './app/app.component.html',
-    styleUrls: ['./app/app.component.css']
+	selector: 'app',
+	templateUrl: './app/app.component.html',
+	styleUrls: ['./app/app.component.css']
 })
 
 export class AppComponent implements OnInit {
-  items:Array<string>;
+	items:Array<string>;
 
-  ngOnInit() {
-    this.items = ['one','two','three'];
-  }
+	ngOnInit() {
+		this.items = ['one', 'two', 'three'];
+	}
 }
