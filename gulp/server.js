@@ -40,6 +40,10 @@ function serve() {
 	app.all('/*', function (req, res) {
 		res.sendFile(join(__dirname, conf.paths.dist, 'index.html'));
 	});
+	app.use(function (req, res, err) {
+		console.error(err);
+		res.code(500).end();
+	});
 	app.listen(conf.ports.http, function () {
 		openResource('http://localhost:' + conf.ports.http);
 	});
