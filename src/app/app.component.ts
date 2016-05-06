@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {TodoComponent} from './todo/todo.component';
+import {TodoListComponent} from './todo/todo-list.component';
 
 import Todo from "./todo/todo";
 
@@ -7,12 +7,10 @@ import Todo from "./todo/todo";
 	selector: 'app',
 	templateUrl: './app/app.component.html',
 	styleUrls: ['./app/app.component.css'],
-	directives: [TodoComponent]
+	directives: [TodoListComponent]
 })
-
 export class AppComponent {
 	data: Array<Todo> = FIXTURES;
-	selected: Todo;
 }
 
 var FIXTURES: Array<Todo> = [
