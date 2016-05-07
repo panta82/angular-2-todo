@@ -19,6 +19,7 @@ export class TodoListComponent {
 
 	editingId: string = null;
 	editingOriginal: Todo = null;
+	editingTemporary: boolean = false;
 
 	onTodoEdit(todoId: string) {
 		let todo = lodash.find(this.todos, {id: todoId});
@@ -27,11 +28,12 @@ export class TodoListComponent {
 		}
 
 		if (this.editingId) {
-			this.doCancelTodoEdit();
+			this.onTodoCancel();
 		}
 
 		this.editingId = todoId;
 		this.editingOriginal = this.cloneService.clone(todo);
+		this.editingTemporary = false;
 	}
 
 	onTodoSave() {
@@ -40,17 +42,29 @@ export class TodoListComponent {
 	}
 
 	onTodoCancel() {
-		this.doCancelTodoEdit();
-	}
-
-	doCancelTodoEdit() {
 		if (!this.editingId) {
 			return console.error(`No todo is being edited`);
 		}
 
 		let index = lodash.findIndex(this.todos, {id: this.editingId});
-		this.todos[index] = this.editingOriginal;
+		if (this.editingTemporary) {
+			this.todos.splice(index, 1);
+		} else {
+			this.todos[index] = this.editingOriginal;
+		}
 		this.editingId = null;
 		this.editingOriginal = null;
+	}
+
+	onTodoAdd() { 
+		let todo = <Todo>{
+			id: Math.random().toString(),
+			text: '',
+			done: false
+		};
+		this.todos.push(todo);
+
+		this.onTodoEdit(todo.id);
+		this.editingTemporary = true;
 	}
 }
