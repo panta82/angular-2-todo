@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "traceur-runtime": "^0.0.107"
+    "traceur-runtime": "^0.0.107",
+    "lodash": "~4.11.2"
   }
 }

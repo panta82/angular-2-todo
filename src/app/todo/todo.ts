@@ -1,6 +1,7 @@
 class Todo {
-	text: String;
-	done: Boolean;
+	id: string;
+	text: string;
+	done: boolean;
 }
 
 export default Todo;

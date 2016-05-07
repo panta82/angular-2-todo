@@ -27,7 +27,7 @@ gulp.task('typescript', function () {
 		.pipe(tsc(tsProject));
 
 	return result.js
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(template(templateLocals()))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(join(__dirname, conf.paths.dist)));

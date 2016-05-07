@@ -1,4 +1,11 @@
 <div class="todo-list">
-	<todo *ngFor="let todo of todos" [todo]="todo"></todo>
+	<todo
+			*ngFor="let todo of todos"
+			[todo]="todo"
+			[editMode]="todo.id === editingId"
+			(edit)="onTodoEdit($event)"
+			(save)="onTodoSave()"
+			(cancel)="onTodoCancel()"
+	></todo>
 </div>
 

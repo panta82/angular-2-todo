@@ -14,6 +14,6 @@ export class AppComponent {
 }
 
 var FIXTURES: Array<Todo> = [
-	{ text: 'Todo1', done: false },
-	{ text: 'Todo2', done: false }
+	<Todo>{ id: Math.random().toString(), text: 'Todo1', done: false },
+	<Todo>{ id: Math.random().toString(), text: 'Todo2', done: false }
 ];

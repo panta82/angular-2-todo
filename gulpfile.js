@@ -1,6 +1,4 @@
-//'use strict';
-
-require('longjohn');
+'use strict';
 
 var gulp = require('gulp');
 var fs = require('fs');

@@ -1,12 +1,31 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import Todo from "./todo";
 
+declare var __moduleName: any;
+
 @Component({
+	moduleId: __moduleName,
 	selector: 'todo',
-	templateUrl: './app/todo/todo.component.html',
-	styleUrls: ['./app/todo/todo.component.css']
+	templateUrl: 'todo.component.html',
+	styleUrls: ['todo.component.css']
 })
 export class TodoComponent {
-	@Input()
-	todo: Todo;
+	@Input() todo: Todo;
+	@Input() editMode: boolean;
+
+	@Output() edit = new EventEmitter<string>();
+	@Output() save = new EventEmitter<string>();
+	@Output() cancel = new EventEmitter<string>();
+
+	onEdit() {
+		this.edit.emit(this.todo.id);
+	}
+
+	onSave() {
+		this.save.emit(this.todo.id);
+	}
+
+	onCancel() {
+		this.cancel.emit(this.todo.id);
+	}
 }

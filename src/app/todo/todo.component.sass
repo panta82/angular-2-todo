@@ -1,10 +1,23 @@
+@import "todo-list.component"
+
+$btn-width: 60px
+
 .todo
 	background: #eee
 	border: 2px solid #22b0e8
 	margin: 5px
-	padding: 5px 20px
+	padding: 5px
+	overflow: auto
 
-	span
-		text-align: center
+	.text
+		float: left
+		max-width: $list-width - $btn-width - 35px
 
+	input
+		float: left
+		width: $list-width - ($btn-width * 2) - 5px - 35px
 
+	button
+		float: right
+		width: $btn-width
+		margin-left: 5px

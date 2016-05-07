@@ -1,4 +1,10 @@
-<div class="todo">
-	<span>{{todo.text}}</span>
+<div class="todo todo-display" *ngIf="!editMode">
+	<div class="text">{{todo.text}}</div>
+	<button type="button" (click)="onEdit()">Edit</button>
+</div>
+<div class="todo todo-editing" *ngIf="editMode">
+	<input type="text" [(ngModel)]="todo.text" placeholder="Enter your TODO text here"/>
+	<button type="button" (click)="onSave()">Save</button>
+	<button type="button" (click)="onCancel()">Cancel</button>
 </div>
 
