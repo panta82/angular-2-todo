@@ -1,5 +1,6 @@
 <div class="todo todo-display" *ngIf="!editMode">
 	<div class="text">{{todo.text}}</div>
+	<button type="button" class="btn-danger" (click)="onRemove()">X</button>
 	<button type="button" (click)="onEdit()">Edit</button>
 </div>
 <div class="todo todo-editing" *ngIf="editMode">

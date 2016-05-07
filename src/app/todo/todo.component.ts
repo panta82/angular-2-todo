@@ -16,6 +16,7 @@ export class TodoComponent {
 	@Output() edit = new EventEmitter<string>();
 	@Output() save = new EventEmitter<string>();
 	@Output() cancel = new EventEmitter<string>();
+	@Output() remove = new EventEmitter<string>();
 
 	onEdit() {
 		this.edit.emit(this.todo.id);
@@ -27,5 +28,9 @@ export class TodoComponent {
 
 	onCancel() {
 		this.cancel.emit(this.todo.id);
+	}
+
+	onRemove() {
+		this.remove.emit(this.todo.id);
 	}
 }

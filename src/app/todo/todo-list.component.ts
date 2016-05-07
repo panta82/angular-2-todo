@@ -56,7 +56,7 @@ export class TodoListComponent {
 		this.editingOriginal = null;
 	}
 
-	onTodoAdd() { 
+	onTodoAdd() {
 		let todo = <Todo>{
 			id: Math.random().toString(),
 			text: '',
@@ -66,5 +66,14 @@ export class TodoListComponent {
 
 		this.onTodoEdit(todo.id);
 		this.editingTemporary = true;
+	}
+
+	onTodoRemove(todoId) {
+		let index = lodash.findIndex(this.todos, {id: todoId});
+		if (index < 0) {
+			return console.error(`No todo with id ${todoId} was found`);
+		}
+
+		this.todos.splice(index, 1);
 	}
 }
