@@ -121,6 +121,9 @@ export class TodoListComponent {
 	}
 
 	onTodoRemove(todoId) {
+		if (this.editingId) {
+			this.onTodoCancel();
+		}
 		this.isWaiting = true;
 		this.todosService.remove(todoId)
 			.then(
