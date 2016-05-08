@@ -1,0 +1,15 @@
+@import "../../styles/vars"
+
+$todo-background: #eee
+
+@mixin todo-frame()
+	background: $todo-background
+	border: 2px solid lighten($color_primary, 10%)
+	margin: 5px
+	padding: 5px
+	overflow: auto
+	min-height: 22px
+	vertical-align: middle
+	line-height: 22px
+
+

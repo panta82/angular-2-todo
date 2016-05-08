@@ -1,19 +1,12 @@
 @import "todo-list.component"
 @import "../../styles/vars"
+@import "./todo-common"
 
 $btn-width-word: 60px
 $btn-width-symbol: 25px
 
 .todo
-	background: #eee
-	border: 2px solid lighten($color_primary, 10%)
-	margin: 5px
-	padding: 5px
-	overflow: auto
-	min-height: 22px
-	vertical-align: middle
-	line-height: 22px
-
+	@include todo-frame
 	.text
 		float: left
 		max-width: $list-width - $btn-width-word - $btn-width-symbol - 35px

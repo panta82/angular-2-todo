@@ -8,6 +8,9 @@
 			(cancel)="onTodoCancel()"
 			(remove)="onTodoRemove($event)"
 	></todo>
+	<div class="empty" *ngIf="!todos.length">
+		Click Add to create a TODO item
+	</div>
 </div>
 <div class="buttons">
 	<button type="button" class="btn" (click)="onTodoAdd()">Add</button>
