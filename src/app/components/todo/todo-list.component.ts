@@ -24,7 +24,7 @@ export class TodoListComponent {
 
 	editingId: string = null;
 	editingOriginal: Todo = null;
-	editingTemporary: boolean = false;
+	creatingNew: boolean = false;
 
 	onTodoEdit(todoId: string) {
 		let todo = lodash.find(this.todos, {id: todoId});
@@ -38,12 +38,12 @@ export class TodoListComponent {
 
 		this.editingId = todoId;
 		this.editingOriginal = this.cloneService.clone(todo);
-		this.editingTemporary = false;
 	}
 
 	onTodoSave() {
 		this.editingId = null;
 		this.editingOriginal = null;
+		this.creatingNew = false;
 	}
 
 	onTodoCancel() {
@@ -52,13 +52,14 @@ export class TodoListComponent {
 		}
 
 		let index = lodash.findIndex(this.todos, {id: this.editingId});
-		if (this.editingTemporary) {
+		if (this.creatingNew) {
 			this.todos.splice(index, 1);
 		} else {
 			this.todos[index] = this.editingOriginal;
 		}
 		this.editingId = null;
 		this.editingOriginal = null;
+		this.creatingNew = false;
 	}
 
 	onTodoAdd() {
@@ -70,7 +71,7 @@ export class TodoListComponent {
 		this.todos.push(todo);
 
 		this.onTodoEdit(todo.id);
-		this.editingTemporary = true;
+		this.creatingNew = true;
 	}
 
 	onTodoRemove(todoId) {

@@ -1,5 +1,6 @@
 @import "./vars"
 
+
 /deep/ .btn
 	background: $color_button
 	color: black
@@ -9,11 +10,16 @@
 	cursor: pointer
 	&:active
 		box-shadow: inset 1px 1px 1px 0 rgba(0,0,0,0.5)
-	&:hover
+	&:hover:not(:disabled)
 		background: lighten($color_button, 10%)
+	&:disabled
+		color: rgba(0,0,0,0.5)
+		cursor: default
 
 	&.btn-danger
 		background: $color_danger
 		color: white
 		font-weight: bold
 		text-align: center
+		&:hover:not(:disabled)
+			background: lighten($color_danger, 10%)
