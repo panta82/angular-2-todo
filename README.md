@@ -1,6 +1,8 @@
 # Angular 2 TODO
 
-My first angular 2 app, made for learning purposes. 
+My first angular 2 app, made for learning purposes.
+
+![Screenshot](docs/screenshot.png)
 
 It's based on [this yeoman generator](https://github.com/ruffiem/generator-angular2-application-scaffolder),
 with some modifications in terms of build system. I added lodash and removed bootstrap (which didn't seem to work).
