@@ -1,7 +1,5 @@
 'use strict';
 
-require('trace');
-
 var gulp = require('gulp');
 var conf = require('./conf');
 var runSequence = require('run-sequence');
