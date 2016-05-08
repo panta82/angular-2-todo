@@ -7,6 +7,7 @@
 			(save)="onTodoSave()"
 			(cancel)="onTodoCancel()"
 			(remove)="onTodoRemove($event)"
+			(done)="onTodoDone($event)"
 	></todo>
 	<div class="empty" *ngIf="!todos.length">
 		Click Add to create a TODO item

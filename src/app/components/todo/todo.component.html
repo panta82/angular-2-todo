@@ -1,4 +1,7 @@
-<div class="todo todo-display" *ngIf="!editMode">
+<div class="todo todo-display" *ngIf="!editMode" [class.done]="todo.done">
+	<button type="button" class="btn done-btn" (click)="onToggleDone()">
+		&#10003;
+	</button>
 	<div class="text">{{todo.text}}</div>
 	<button type="button" class="btn btn-danger" (click)="onRemove()">X</button>
 	<button type="button" class="btn" (click)="onEdit()">Edit</button>

@@ -4,12 +4,13 @@
 
 $btn-width-word: 60px
 $btn-width-symbol: 25px
+$btn-size-done: 20px
 
 .todo
 	@include todo-frame
 	.text
 		float: left
-		max-width: $list-width - $btn-width-word - $btn-width-symbol - 35px
+		max-width: $list-width - $btn-width-word - $btn-width-symbol - $btn-width-symbol - 40px
 
 	input
 		float: left
@@ -22,3 +23,20 @@ $btn-width-symbol: 25px
 
 		&.btn-danger
 			width: $btn-width-symbol
+
+	.done-btn
+		float: left
+		width: $btn-size-done
+		border-radius: $btn-size-done
+		height: $btn-size-done
+		line-height: $btn-size-done
+		margin-left: 0
+		margin-right: 5px
+		padding: 0
+
+	&.done
+		.done-btn
+			box-shadow: inset 1px 1px 1px 0 rgba(0,0,0,0.5)
+
+		.text
+			text-decoration: line-through

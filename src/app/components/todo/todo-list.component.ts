@@ -134,4 +134,21 @@ export class TodoListComponent {
 				}
 			);
 	}
+
+	onTodoDone(todoId) {
+		let todo: Todo = lodash.find(this.todos, {id: todoId});
+		if (!todo) {
+			return console.error(`Todo not found: ${todoId}`);
+		}
+
+		var oldDone = todo.done;
+		todo.done = !todo.done;
+		this.todosService.update(todo)
+			.catch(
+				error => {
+					alert(error.message);
+					todo.done = oldDone;
+				}
+			);
+	}
 }
