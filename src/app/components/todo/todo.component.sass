@@ -1,11 +1,12 @@
 @import "todo-list.component"
+@import "../../styles/vars"
 
-$btn-width-wide: 60px
+$btn-width-word: 60px
 $btn-width-symbol: 25px
 
 .todo
 	background: #eee
-	border: 2px solid #22b0e8
+	border: 2px solid lighten($color_primary, 10%)
 	margin: 5px
 	padding: 5px
 	overflow: auto
@@ -15,15 +16,15 @@ $btn-width-symbol: 25px
 
 	.text
 		float: left
-		max-width: $list-width - $btn-width-wide - $btn-width-symbol - 35px
+		max-width: $list-width - $btn-width-word - $btn-width-symbol - 35px
 
 	input
 		float: left
-		width: $list-width - ($btn-width-wide * 2) - 5px - 35px
+		width: $list-width - ($btn-width-word * 2) - 5px - 35px
 
 	button
 		float: right
-		width: $btn-width-wide
+		width: $btn-width-word
 		margin-left: 5px
 
 		&.btn-danger

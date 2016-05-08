@@ -38,7 +38,7 @@ gulp.task('livereload', function () {
 function serve() {
 	var app;
 	app = express().use('/', connectLivereload({port: conf.ports.liveReload}), serveStatic(join(__dirname, conf.paths.dist)));
-	app.all('/*', function (req, res) {
+	app.all('/', function (req, res) {
 		res.sendFile(join(__dirname, conf.paths.dist, 'index.html'));
 	});
 	app.listen(conf.ports.http, function () {

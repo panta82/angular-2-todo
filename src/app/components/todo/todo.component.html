@@ -1,0 +1,11 @@
+<div class="todo todo-display" *ngIf="!editMode">
+	<div class="text">{{todo.text}}</div>
+	<button type="button" class="btn btn-danger" (click)="onRemove()">X</button>
+	<button type="button" class="btn" (click)="onEdit()">Edit</button>
+</div>
+<div class="todo todo-editing" *ngIf="editMode">
+	<input type="text" [(ngModel)]="todo.text" placeholder="Enter your TODO text here"/>
+	<button type="button" class="btn" (click)="onSave()">Save</button>
+	<button type="button" class="btn" (click)="onCancel()">Cancel</button>
+</div>
+

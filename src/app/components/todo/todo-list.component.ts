@@ -1,13 +1,18 @@
+/// <reference path="../../../../typings/browser/ambient/lodash/index.d.ts" />
+
 import {Component, Input} from 'angular2/core';
-import Todo from "./todo";
 import {TodoComponent} from "./todo.component";
-import {CloneService} from "../services/clone.service";
+import {CloneService} from "../../services/clone.service";
 import * as lodash from "lodash";
+import Todo from "../../models/todo";
+
+declare var __moduleName: any;
 
 @Component({
+	moduleId: __moduleName,
 	selector: 'todo-list',
-	templateUrl: './app/todo/todo-list.component.html',
-	styleUrls: ['./app/todo/todo-list.component.css'],
+	templateUrl: 'todo-list.component.html',
+	styleUrls: ['todo-list.component.css'],
 	directives: [TodoComponent],
 	providers: [CloneService]
 })
