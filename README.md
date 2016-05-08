@@ -20,6 +20,18 @@ npm install
 bower install
 gulp-serve
 ```
+
+## TODO
+
+TODO for this TODO app
+
+- Tests
+- Use actual backend for data
+- Use rxjs instead of promises
+- Drag & drop
+- Error states
+- Monetize and retire
+
 ## Licence
 
 [WTFPL](http://www.wtfpl.net/about/)
